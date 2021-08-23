@@ -1,3 +1,7 @@
+layout: post
+title: "First Post"
+date: 2021-08-23 13:57:00 -0600
+
 ## First Post
 
 So now we have a blog. What's next?  What content do you want to share? 
