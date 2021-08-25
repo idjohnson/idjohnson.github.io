@@ -1,4 +1,7 @@
 ---
 layout: default
 ---
+{% if page.visible!=1 %}
+<h1><font color=red>**DRAFT POST: MAY BE INCOMPLETE**</font></h1>
+{% endif %}
 {{ content }}

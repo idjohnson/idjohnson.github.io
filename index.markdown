@@ -7,9 +7,11 @@ layout: home
 My posts:
 <ul>
   {% for post in site.posts %}
+  {% if post.visible== 1  %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
       {{ post.excerpt }}
     </li>
+  {% endif %}
   {% endfor %}
 </ul>
