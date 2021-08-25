@@ -1,6 +1,9 @@
+---
 layout: post
-title: "First Post"
-date: 2021-08-23 13:57:00 -0600
+title:  "First Post"
+date:   2021-08-23 11:10:43 -0500
+categories: personal
+---
 
 ## First Post
 
