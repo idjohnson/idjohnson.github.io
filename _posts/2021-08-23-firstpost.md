@@ -3,6 +3,7 @@ layout: post
 title:  "First Post"
 date:   2021-08-23 11:10:43 -0500
 categories: personal
+visible: 1
 ---
 
 ## First Post
