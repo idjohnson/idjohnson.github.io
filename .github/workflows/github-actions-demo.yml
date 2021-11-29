@@ -19,3 +19,9 @@ jobs:
           uname -a
           touch /tmp/asdf
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-with-markdown
+          path: |
+            **/*.md
