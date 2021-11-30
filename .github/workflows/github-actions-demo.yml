@@ -14,10 +14,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: List files in the repository
+      - name: show az
         run: |
           which az
           az version
+      - name: sleep 30
+        run: sleep 30
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
