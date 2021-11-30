@@ -16,8 +16,8 @@ jobs:
           ls ${{ github.workspace }}
       - name: List files in the repository
         run: |
-          uname -a
-          touch /tmp/asdf
+          which az
+          az version
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
