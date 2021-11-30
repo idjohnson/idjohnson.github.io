@@ -18,8 +18,8 @@ jobs:
         run: |
           which az
           az version
-      - name: sleep 40
-        run: sleep 40
+      - name: sleep 50
+        run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
