@@ -1,0 +1,40 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: my-runner-deployment
+    env: # Or as an environment variable
+      credentials: ${{ secrets.SOMESECRET }}
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: show az
+        run: |
+          which az
+          az version
+          export
+      - name: testsecret
+        run: echo $SOMESECRET | base64 > docs/t1.md
+      - name: testsecret2
+        run: echo $credentials | base64 > docs/t2.md
+      - name: testsecret3
+        run: echo ${{ secrets.SOMESECRET }} | base64 > docs/t3.md
+      - name: testsecret4
+        run: echo ${ SOMESECRET } | base64 > docs/t4.md
+      - name: sleep 50
+        run: sleep 50
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-with-markdown
+          path: |
+            **/*.md
