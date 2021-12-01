@@ -4,7 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: my-runner-deployment
     env: # Or as an environment variable
-      credentials: ${{ secrets.MYFEATURESECRET }}
+      credentials: ${{ secrets.SOMESECRET }}
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -22,13 +22,13 @@ jobs:
           az version
           export
       - name: testsecret
-        run: echo $MYFEATURESECRET | base64 > t.o && cat t.o
+        run: echo $SOMESECRET | base64 > t.o && cat t.o
       - name: testsecret2
         run: echo $credentials | base64 > t.o && cat t.o
       - name: testsecret3
-        run: echo ${{ secrets.MYFEATURESECRET }} | base64 > t.o && cat t.o
+        run: echo ${{ secrets.SOMESECRET }} | base64 > t.o && cat t.o
       - name: testsecret4
-        run: echo ${ MYFEATURESECRET } | base64 > t.o && cat t.o
+        run: echo ${ SOMESECRET } | base64 > t.o && cat t.o
       - name: sleep 50
         run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
