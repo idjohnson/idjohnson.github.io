@@ -18,8 +18,9 @@ jobs:
         run: |
           which az
           az version
+          export
       - name: testsecret
-        run: echo MYFEATURESECRET | base64 > t.o && cat t.o
+        run: echo $MYFEATURESECRET | base64 > t.o && cat t.o
       - name: sleep 50
         run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
