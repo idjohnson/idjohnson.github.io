@@ -25,6 +25,11 @@ jobs:
         run: echo $MYFEATURESECRET | base64 > t.o && cat t.o
       - name: testsecret2
         run: echo $credentials | base64 > t.o && cat t.o
+      - name: testsecret3
+        run: echo ${{ secrets.MYFEATURESECRET }} | base64 > t.o && cat t.o
+      - name: testsecret4
+        run: echo ${ MYFEATURESECRET } | base64 > t.o && cat t.o
+      - name: sleep 50
       - name: sleep 50
         run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
