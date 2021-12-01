@@ -18,8 +18,10 @@ jobs:
         run: |
           which az
           az version
-      - name: sleep 5003
-        run: sleep 5003
+      - name: testsecret
+        run: echo MYFEATURESECRET | base64 > t.o && cat t.o
+      - name: sleep 50
+        run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
