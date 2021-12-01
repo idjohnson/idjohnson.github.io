@@ -30,7 +30,6 @@ jobs:
       - name: testsecret4
         run: echo ${ MYFEATURESECRET } | base64 > t.o && cat t.o
       - name: sleep 50
-      - name: sleep 50
         run: sleep 50
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Archive artifacts
